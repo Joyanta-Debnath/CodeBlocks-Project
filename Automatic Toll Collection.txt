@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void main (void)
+{
+    int code;
+    double price, value, cash, change,change1=0, cash1, change2,change3;
+    printf("--------------------------------\n");
+    printf("=======:::TOLL PLAZA:::========\n");
+    printf("--------------------------------\n");
+    printf("CODE  NAME             AMOUNT  \n");
+    printf("--------------------------------\n");
+
+
+
+    printf("[1] Motor Bike\t\tBDT 50.00\n");
+    printf("[2] CNG \t\tBDT 100.00\n");
+    printf("[3] Car \t\tBDT 150.00\n");
+    printf("[4] Bus \t\tBDT 200.00\n");
+    printf("[5] Truck \t\tBDT 250.00\n");
+
+    printf("\nEnter Vehicle Code\t: ");
+    scanf("%d", &code);
+
+    switch (code)
+    {
+    case 1:
+        price = 50.00;
+        break;
+    case 2:
+        price = 100.00;
+        break;
+    case 3:
+        price = 150.00;
+        break;
+    case 4:
+        price = 200.00;
+        break;
+    case 5:
+        price = 250.00;
+        break;
+    }
+    value = price;
+    printf("--------------------------------\n");
+    printf("\nAmount of Toll\t\t: %.2lf\n", value);
+    printf("--------------------------------\n");
+
+    printf("\nEnter Cash\t\t: ");
+    scanf("%lf", &cash);
+
+    change = cash - value;
+    if (change <0)
+    {
+        printf("--------------------------------\n");
+    change1= (change*-1);
+        printf("\nHave To Pay Additional\t: %.2lf\n", change1);
+        printf("--------------------------------\n");
+        printf("\nEnter Cash\t\t: ");
+        scanf("%lf", &cash1);
+        change2 = cash1 - change1;
+        printf("--------------------------------\n");
+       if (change2<0)
+       {
+           change3= (change2*-1);
+        printf("\nHave To Pay Additional\t: %.2lf\n", change3);
+        printf("--------------------------------\n");
+       }
+       else
+       {
+        printf("\nChange  \t\t: %.2lf\n", change2);
+        printf("--------------------------------\n");
+
+       }
+
+
+
+
+
+
+
+
+    }
+    else
+    {
+        printf("--------------------------------\n");
+        printf("\nChange  \t\t: %.2lf\n", change);
+        printf("--------------------------------\n");
+
+    }
+
+    getch();
+
+}
